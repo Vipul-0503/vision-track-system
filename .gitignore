@@ -1,0 +1,16 @@
+# Python environment
+venv/
+__pycache__/
+*.pyc
+
+# IDE settings
+.vscode/
+.idea/
+
+# Large ML Files
+data/
+models/
+*.pt
+*.jpg
+*.png
+*.mp4
