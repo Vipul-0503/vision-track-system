@@ -17,8 +17,14 @@ This system utilizes state-of-the-art deep learning architectures to identify, c
 * `src/` - Core execution scripts
   * `detector.py` - Core object detection class logic
   * `main.py` - Video stream orchestration and frame rendering
+ 
+## 🛠 Technical Challenges & Solutions
+- **Hardware Variability:** The initial implementation relied on hardcoded camera indices. 
+  *Solution:* Developed a robust, automated probing algorithm that dynamically identifies active video input devices (0-3).
+- **False Positive Classification:** Lower confidence thresholds led to object misidentification (e.g., cell phones labeled as persons). 
+  *Solution:* Fine-tuned the inference pipeline with a 70% confidence threshold (`conf=0.7`) and mapped specific COCO class IDs to target workspace objects.
 
-## 📊 Core Objectives (Target: June 1st)
+## 📊 Core Objectives
 * **Real-Time Inference:** Achieve stable high-FPS processing on standard video inputs.
 * **Confidence Tuning:** Optimize detection thresholds to balance precision and recall for target categories.
 * **Modular Pipeline:** Separate the frame acquisition logic from the model inference loop for clean code execution.
